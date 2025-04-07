@@ -12,4 +12,7 @@ func main() {
 	api.RegisterRoutes(router)
 	const port = ":8080"
 	log.Printf("Server is running on port %s", port)
+	if err := router.Run(port); err != nil {
+		log.Fatal("Failed to start the server: ", err)
+	}
 }
